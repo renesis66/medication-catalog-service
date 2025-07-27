@@ -4,13 +4,12 @@ import com.example.domain.model.MedicationCatalog
 import com.example.domain.model.MedicationCategory
 import com.example.domain.model.valueobjects.MedicationName
 import com.example.domain.repository.MedicationCatalogRepository
-import io.micronaut.context.annotation.Replaces
-import io.micronaut.test.annotation.MockBean
+import io.micronaut.context.annotation.Requires
 import jakarta.inject.Singleton
 import java.util.concurrent.ConcurrentHashMap
 
 @Singleton
-@Replaces(com.example.infrastructure.dynamodb.MedicationCatalogRepositoryImpl::class)
+@Requires(env = ["test"])
 class InMemoryMedicationCatalogRepository : MedicationCatalogRepository {
     
     private val medications = ConcurrentHashMap<String, MedicationCatalog>()

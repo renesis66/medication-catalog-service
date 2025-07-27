@@ -4,6 +4,7 @@ import com.example.domain.model.MedicationCatalog
 import com.example.domain.model.MedicationCategory
 import com.example.domain.model.valueobjects.MedicationName
 import com.example.domain.repository.MedicationCatalogRepository
+import io.micronaut.context.annotation.Requires
 import jakarta.inject.Singleton
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbIndex
@@ -12,6 +13,7 @@ import software.amazon.awssdk.enhanced.dynamodb.Key
 import software.amazon.awssdk.enhanced.dynamodb.model.QueryConditional
 
 @Singleton
+@Requires(notEnv = ["test"])
 class MedicationCatalogRepositoryImpl(
     private val enhancedClient: DynamoDbEnhancedClient
 ) : MedicationCatalogRepository {

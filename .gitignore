@@ -1,0 +1,113 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Micronaut AOT generated classes
+**/target/generated-sources/annotations/**
+
+# Kotlin compiled class files
+*.class
+
+# KotlinScript cache
+.kotlin/
+
+# Local environment variables
+.env
+.env.local
+.env.*.local
+
+# AWS credentials and config
+.aws/
+
+# DynamoDB Local files
+dynamodb_local_*
+shared-local-instance.db
+
+# Application specific
+application-local.yml
+application-dev.yml
+application-prod.yml
+!application-test.yml
+
+# Test results
+/build/reports/
+/build/test-results/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Docker
+.docker/
+
+# Local development overrides
+docker-compose.override.yml

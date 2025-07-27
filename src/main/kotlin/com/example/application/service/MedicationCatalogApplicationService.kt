@@ -4,13 +4,13 @@ import com.example.application.dto.*
 import com.example.domain.model.MedicationCategory
 import com.example.domain.model.valueobjects.MedicationName
 import com.example.domain.repository.MedicationCatalogRepository
-import com.example.domain.service.MedicationDomainService
+import com.example.domain.service.MedicationCatalogDomainService
 import jakarta.inject.Singleton
 
 @Singleton
 class MedicationCatalogApplicationService(
     private val medicationCatalogRepository: MedicationCatalogRepository,
-    private val medicationDomainService: MedicationDomainService
+    private val medicationCatalogDomainService: MedicationCatalogDomainService
 ) {
     
     suspend fun getAllMedications(): List<MedicationCatalogResponse> {
@@ -50,7 +50,7 @@ class MedicationCatalogApplicationService(
     suspend fun createMedication(request: CreateMedicationCatalogRequest): MedicationCatalogResponse {
         val medication = request.toDomain()
         
-        medicationDomainService.validateMedicationForCreation(medication)
+        medicationCatalogDomainService.validateMedicationForCreation(medication)
         
         val savedMedication = medicationCatalogRepository.save(medication)
         return savedMedication.toResponse()

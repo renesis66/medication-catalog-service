@@ -1,6 +1,8 @@
 package com.example.domain.model
 
 import com.example.domain.model.valueobjects.MedicationName
+import com.example.domain.model.valueobjects.DosageAmount
+import com.example.domain.model.valueobjects.DosageUnit
 import java.time.Instant
 
 data class MedicationCatalog(
@@ -28,7 +30,7 @@ data class MedicationCatalog(
     fun hasContraindication(condition: String): Boolean = 
         contraindications.any { it.equals(condition, ignoreCase = true) }
     
-    fun getRecommendedFrequency(): FrequencyHours? = frequencyOptions.minOrNull()
+    fun getRecommendedFrequency(): FrequencyHours? = frequencyOptions.minByOrNull { it.hours }
     
     fun validateDailyDose(totalDose: Int): Boolean = totalDose <= maxDailyDose
 }

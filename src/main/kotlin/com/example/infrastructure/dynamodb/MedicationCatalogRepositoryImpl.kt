@@ -41,12 +41,16 @@ class MedicationCatalogRepositoryImpl(
         )
         
         val results = gsi1.query(queryConditional)
-        return results.items().mapNotNull { it.toDomain() }
+        return results.stream().map { page -> 
+            page.items().map { it.toDomain() }
+        }.flatMap { it.stream() }.filter { it != null }.map { it!! }.toList()
     }
     
     override suspend fun findAll(): List<MedicationCatalog> {
         val results = table.scan()
-        return results.items().mapNotNull { it.toDomain() }
+        return results.stream().map { page ->
+            page.items().map { it.toDomain() }
+        }.flatMap { it.stream() }.filter { it != null }.map { it!! }.toList()
     }
     
     override suspend fun save(medication: MedicationCatalog): MedicationCatalog {

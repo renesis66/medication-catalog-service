@@ -2,6 +2,7 @@ package com.example.infrastructure.dynamodb
 
 import com.example.domain.model.*
 import com.example.domain.model.valueobjects.MedicationName
+import com.example.domain.model.valueobjects.DosageUnit
 
 fun MedicationCatalogEntity.toDomain(): MedicationCatalog? {
     return try {

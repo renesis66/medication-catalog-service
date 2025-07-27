@@ -2,6 +2,7 @@ package com.example.application.dto
 
 import com.example.domain.model.*
 import com.example.domain.model.valueobjects.MedicationName
+import com.example.domain.model.valueobjects.DosageUnit
 import io.micronaut.serde.annotation.Serdeable
 
 @Serdeable

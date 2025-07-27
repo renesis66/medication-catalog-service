@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.MedicationCatalogApiControllerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-07-27T15:33:12" hostname="SCOTTs-MacBook-Pro.local" time="0.002">
+  <properties/>
+  <testcase name="initializationError" classname="com.example.MedicationCatalogApiControllerTest" time="0.002">
+    <failure message="io.micronaut.context.exceptions.BeanInstantiationException: Bean definition [io.micronaut.logging.PropertiesLoggingLevelsConfigurer] could not be loaded: Error instantiating bean of type  [io.micronaut.logging.PropertiesLoggingLevelsConfigurer]&#10;&#10;Message: Resource logback.xml not found&#10;Path Taken: new PropertiesLoggingLevelsConfigurer(Environment environment,List loggingSystems)" type="io.micronaut.context.exceptions.BeanInstantiationException">io.micronaut.context.exceptions.BeanInstantiationException: Bean definition [io.micronaut.logging.PropertiesLoggingLevelsConfigurer] could not be loaded: Error instantiating bean of type  [io.micronaut.logging.PropertiesLoggingLevelsConfigurer]
+
+Message: Resource logback.xml not found
+Path Taken: new PropertiesLoggingLevelsConfigurer(Environment environment,List loggingSystems)
+	at app//io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1982)
+	at app//io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:294)
+	at app//io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3348)
+	at app//io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3692)
+	at app//io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:342)
+	at app//io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:202)
+	at app//io.micronaut.test.extensions.AbstractMicronautExtension.startApplicationContext(AbstractMicronautExtension.java:502)
+	at app//io.micronaut.test.extensions.AbstractMicronautExtension.beforeClass(AbstractMicronautExtension.java:341)
+	at app//io.micronaut.test.extensions.junit5.MicronautJunit5Extension.beforeAll(MicronautJunit5Extension.java:84)
+	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: io.micronaut.context.exceptions.BeanInstantiationException: Error instantiating bean of type  [io.micronaut.logging.PropertiesLoggingLevelsConfigurer]
+
+Message: Resource logback.xml not found
+Path Taken: new PropertiesLoggingLevelsConfigurer(Environment environment,List loggingSystems)
+	at app//io.micronaut.context.DefaultBeanContext.resolveByBeanFactory(DefaultBeanContext.java:2326)
+	at app//io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:2281)
+	at app//io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:2293)
+	at app//io.micronaut.context.DefaultBeanContext.createRegistration(DefaultBeanContext.java:3095)
+	at app//io.micronaut.context.SingletonScope.getOrCreate(SingletonScope.java:80)
+	at app//io.micronaut.context.DefaultBeanContext.findOrCreateSingletonBeanRegistration(DefaultBeanContext.java:2997)
+	at app//io.micronaut.context.DefaultBeanContext.initializeEagerBean(DefaultBeanContext.java:2678)
+	at app//io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1976)
+	... 9 more
+Caused by: io.micronaut.logging.LoggingSystemException: Resource logback.xml not found
+	at app//io.micronaut.logging.impl.LogbackUtils.configure(LogbackUtils.java:109)
+	at app//io.micronaut.logging.impl.LogbackUtils.configure(LogbackUtils.java:56)
+	at app//io.micronaut.logging.impl.LogbackLoggingSystem.refresh(LogbackLoggingSystem.java:71)
+	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at app//io.micronaut.logging.PropertiesLoggingLevelsConfigurer.initLogging(PropertiesLoggingLevelsConfigurer.java:85)
+	at app//io.micronaut.logging.PropertiesLoggingLevelsConfigurer.&lt;init&gt;(PropertiesLoggingLevelsConfigurer.java:69)
+	at app//io.micronaut.logging.$PropertiesLoggingLevelsConfigurer$Definition.instantiate(Unknown Source)
+	at app//io.micronaut.context.DefaultBeanContext.resolveByBeanFactory(DefaultBeanContext.java:2311)
+	... 16 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[08:33:12.279 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Environment deduction is using the default of: true
+08:33:12.288 [Test worker] INFO io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Established active environments: [test]
+08:33:12.289 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Starting environment io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment@324dcd31 for active names [test]
+08:33:12.293 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Reading property sources from loader: io.micronaut.testresources.client.TestResourcesClientPropertySourceLoader@503d56b5
+08:33:12.294 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Reading property sources from loader: io.micronaut.context.env.hocon.HoconPropertySourceLoader@581d969c
+08:33:12.295 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Attempting to dynamically load class com.typesafe.config.Config
+08:33:12.296 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Successfully loaded class com.typesafe.config.Config
+08:33:12.296 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Attempting to dynamically load class io.micronaut.context.env.hocon.HoconPropertySourceLoaderImpl
+08:33:12.296 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Successfully loaded class io.micronaut.context.env.hocon.HoconPropertySourceLoaderImpl
+08:33:12.302 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Attempting to dynamically load class com.typesafe.config.Config
+08:33:12.302 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Successfully loaded class com.typesafe.config.Config
+08:33:12.306 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Reading property sources from loader: io.micronaut.jackson.core.env.CloudFoundryVcapApplicationPropertySourceLoader@3228d990
+08:33:12.306 [Test worker] DEBUG io.micronaut.jackson.core.env.CloudFoundryVcapApplicationPropertySourceLoader -- No PropertySource found for file name: application.VCAP_APPLICATION
+08:33:12.307 [Test worker] DEBUG io.micronaut.jackson.core.env.CloudFoundryVcapApplicationPropertySourceLoader -- No PropertySource found for file name: application-test.VCAP_APPLICATION
+08:33:12.307 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Reading property sources from loader: io.micronaut.jackson.core.env.JsonPropertySourceLoader@54e7391d
+08:33:12.307 [Test worker] DEBUG io.micronaut.jackson.core.env.JsonPropertySourceLoader -- No PropertySource found for file name: application.json
+08:33:12.308 [Test worker] DEBUG io.micronaut.jackson.core.env.JsonPropertySourceLoader -- No PropertySource found for file name: application-test.json
+08:33:12.308 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Reading property sources from loader: io.micronaut.jackson.core.env.EnvJsonPropertySourceLoader@50b8ae8d
+08:33:12.308 [Test worker] DEBUG io.micronaut.jackson.core.env.EnvJsonPropertySourceLoader -- No PropertySource found for file name: application.json
+08:33:12.308 [Test worker] DEBUG io.micronaut.jackson.core.env.EnvJsonPropertySourceLoader -- No PropertySource found for file name: application-test.json
+08:33:12.308 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Reading property sources from loader: io.micronaut.jackson.core.env.CloudFoundryVcapServicesPropertySourceLoader@255990cc
+08:33:12.308 [Test worker] DEBUG io.micronaut.jackson.core.env.CloudFoundryVcapServicesPropertySourceLoader -- No PropertySource found for file name: application.VCAP_SERVICES
+08:33:12.308 [Test worker] DEBUG io.micronaut.jackson.core.env.CloudFoundryVcapServicesPropertySourceLoader -- No PropertySource found for file name: application-test.VCAP_SERVICES
+08:33:12.309 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Reading property sources from loader: io.micronaut.context.env.PropertiesPropertySourceLoader@51c929ae
+08:33:12.309 [Test worker] DEBUG io.micronaut.context.env.PropertiesPropertySourceLoader -- No PropertySource found for file name: application.properties
+08:33:12.310 [Test worker] DEBUG io.micronaut.context.env.PropertiesPropertySourceLoader -- No PropertySource found for file name: application-test.properties
+08:33:12.311 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Reading property sources from loader: io.micronaut.context.env.yaml.YamlPropertySourceLoader@3c8bdd5b
+08:33:12.312 [Test worker] DEBUG io.micronaut.context.env.yaml.YamlPropertySourceLoader -- Found PropertySource for file name: application.yml
+08:33:12.367 [Test worker] DEBUG io.micronaut.context.env.yaml.YamlPropertySourceLoader -- No PropertySource found for file name: application-test.yml
+08:33:12.368 [Test worker] DEBUG io.micronaut.context.env.yaml.YamlPropertySourceLoader -- No PropertySource found for file name: application-test.yaml
+08:33:12.370 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Processing property source: application
+08:33:12.372 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Processing property source: env
+08:33:12.378 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Processing property source: system
+08:33:12.379 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Processing property source: test-properties
+08:33:12.380 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Processing property source: test resources
+08:33:12.556 [Test worker] DEBUG io.micronaut.serde.ObjectMappers$ObjectMapperContext$1 -- Environment deduction is using the default of: true
+08:33:12.557 [Test worker] INFO io.micronaut.serde.ObjectMappers$ObjectMapperContext$1 -- Established active environments: [test]
+08:33:12.557 [Test worker] DEBUG io.micronaut.serde.ObjectMappers$ObjectMapperContext$1 -- Starting environment io.micronaut.serde.ObjectMappers$ObjectMapperContext$1@75b3673 for active names [test]
+08:33:12.567 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: DefaultEnvironment
+08:33:12.567 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- No bean candidates found for type: DefaultEnvironment
+08:33:12.569 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Starting BeanContext
+08:33:12.587 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.sqs will not be loaded due to failing conditions:
+08:33:12.587 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.sqs.SqsClient] is not present
+08:33:12.587 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.cloudwatchlogs will not be loaded due to failing conditions:
+08:33:12.587 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.cloudwatchlogs.CloudWatchLogsClient] is not present
+08:33:12.588 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.secretsmanager will not be loaded due to failing conditions:
+08:33:12.588 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.secretsmanager.SecretsManagerClient] is not present
+08:33:12.588 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.security.x509 will not be loaded due to failing conditions:
+08:33:12.588 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Required property [micronaut.security.x509.enabled] with value [true] not present
+08:33:12.588 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.ssm will not be loaded due to failing conditions:
+08:33:12.588 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.ssm.SsmClient] is not present
+08:33:12.589 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.client.urlConnection will not be loaded due to failing conditions:
+08:33:12.589 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.http.urlconnection.UrlConnectionHttpClient] is not present
+08:33:12.589 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.gatewaymanagement will not be loaded due to failing conditions:
+08:33:12.589 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.apigatewaymanagementapi.ApiGatewayManagementApiClient] is not present
+08:33:12.589 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.ses will not be loaded due to failing conditions:
+08:33:12.589 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.ses.SesClient] is not present
+08:33:12.590 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.s3 will not be loaded due to failing conditions:
+08:33:12.590 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.s3.S3Client] is not present
+08:33:12.590 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.servicediscovery will not be loaded due to failing conditions:
+08:33:12.590 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.servicediscovery.ServiceDiscoveryClient] is not present
+08:33:12.590 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.sns will not be loaded due to failing conditions:
+08:33:12.590 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.sns.SnsClient] is not present
+08:33:12.590 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: HttpClientRegistry
+08:33:12.591 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- No bean candidates found for type: HttpClientRegistry
+08:33:12.591 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.http.client will not be loaded due to failing conditions:
+08:33:12.591 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * No bean of type [io.micronaut.http.client.HttpClientRegistry] present within context
+08:33:12.592 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanCreatedEventListener
+08:33:12.592 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- No bean candidates found for type: BeanCreatedEventListener
+08:33:12.593 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanInitializedEventListener
+08:33:12.593 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- No bean candidates found for type: BeanInitializedEventListener
+08:33:12.593 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Resolving beans for type: io.micronaut.core.convert.TypeConverter
+08:33:12.593 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: TypeConverter
+08:33:12.593 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- No bean candidates found for type: TypeConverter
+08:33:12.593 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Resolving beans for type: io.micronaut.core.convert.TypeConverterRegistrar
+08:33:12.593 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: TypeConverterRegistrar
+08:33:12.593 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- No bean candidates found for type: TypeConverterRegistrar
+08:33:12.594 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.sqs will not be loaded due to failing conditions:
+08:33:12.595 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.sqs.SqsClient] is not present
+08:33:12.595 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.cloudwatchlogs will not be loaded due to failing conditions:
+08:33:12.595 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.cloudwatchlogs.CloudWatchLogsClient] is not present
+08:33:12.595 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.secretsmanager will not be loaded due to failing conditions:
+08:33:12.595 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.secretsmanager.SecretsManagerClient] is not present
+08:33:12.595 [ForkJoinPool.commonPool-worker-7] DEBUG io.micronaut.context.condition.Condition -- Bean [io.micronaut.serde.support.deserializers.$HealthResultDeserializer$Definition] will not be loaded due to failing conditions:
+08:33:12.595 [ForkJoinPool.commonPool-worker-7] DEBUG io.micronaut.context.condition.Condition -- * Class [io.micronaut.management.health.indicator.HealthResult] is not present
+08:33:12.595 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.security.x509 will not be loaded due to failing conditions:
+08:33:12.595 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Required property [micronaut.security.x509.enabled] with value [true] not present
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.ssm will not be loaded due to failing conditions:
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.ssm.SsmClient] is not present
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.client.urlConnection will not be loaded due to failing conditions:
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.http.urlconnection.UrlConnectionHttpClient] is not present
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.gatewaymanagement will not be loaded due to failing conditions:
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.apigatewaymanagementapi.ApiGatewayManagementApiClient] is not present
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.ses will not be loaded due to failing conditions:
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.ses.SesClient] is not present
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.s3 will not be loaded due to failing conditions:
+08:33:12.596 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.s3.S3Client] is not present
+08:33:12.597 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.servicediscovery will not be loaded due to failing conditions:
+08:33:12.597 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.servicediscovery.ServiceDiscoveryClient] is not present
+08:33:12.597 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.sns will not be loaded due to failing conditions:
+08:33:12.597 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.sns.SnsClient] is not present
+08:33:12.597 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.http.client will not be loaded due to failing conditions:
+08:33:12.597 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * No bean of type [io.micronaut.http.client.HttpClientRegistry] present within context
+08:33:12.597 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Loaded active configurations: io.micronaut.jackson,io.micronaut.security.endpoints.introspection,io.micronaut.aws.sdk.v2.client.apache,io.micronaut.aws.sdk.v2.service.dynamodb,io.micronaut.aws.sdk.v2.client.netty,io.micronaut.security
+08:33:12.597 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- BeanContext Started.
+08:33:12.598 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: ObjectMapper
+08:33:12.598 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.jackson.JacksonJsonMapper null Definition: io.micronaut.serde.jackson.JacksonJsonMapper
+08:33:12.598 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [Definition: io.micronaut.serde.jackson.JacksonJsonMapper] for type: objectMapper 
+08:33:12.607 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: SerdeRegistry registry
+08:33:12.608 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.DefaultSerdeRegistry null Definition: io.micronaut.serde.support.DefaultSerdeRegistry
+08:33:12.608 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [Definition: io.micronaut.serde.support.DefaultSerdeRegistry] for type: registry 
+08:33:12.618 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: SerdeIntrospections introspections
+08:33:12.619 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.DefaultSerdeIntrospections null Definition: io.micronaut.serde.support.DefaultSerdeIntrospections
+08:33:12.619 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [Definition: io.micronaut.serde.support.DefaultSerdeIntrospections] for type: introspections 
+08:33:12.619 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: SerdeConfiguration configuration
+08:33:12.621 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.config.DefaultSerdeConfiguration null Definition: io.micronaut.serde.config.DefaultSerdeConfiguration
+08:33:12.621 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [Definition: io.micronaut.serde.config.DefaultSerdeConfiguration] for type: configuration 
+08:33:12.624 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.serde.config.DefaultSerdeConfiguration@7b7b3edb] from definition [Definition: io.micronaut.serde.config.DefaultSerdeConfiguration] with qualifier [null]
+08:33:12.625 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.serde.support.DefaultSerdeIntrospections@3b08f438] from definition [Definition: io.micronaut.serde.support.DefaultSerdeIntrospections] with qualifier [null]
+08:33:12.625 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: SerializationConfiguration serializationConfiguration
+08:33:12.625 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.config.DefaultSerializationConfiguration null Definition: io.micronaut.serde.config.DefaultSerializationConfiguration
+08:33:12.626 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [Definition: io.micronaut.serde.config.DefaultSerializationConfiguration] for type: serializationConfiguration 
+08:33:12.626 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.serde.config.DefaultSerializationConfiguration@4c03a37] from definition [Definition: io.micronaut.serde.config.DefaultSerializationConfiguration] with qualifier [null]
+08:33:12.626 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: DeserializationConfiguration deserializationConfiguration
+08:33:12.626 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.config.DefaultDeserializationConfiguration null Definition: io.micronaut.serde.config.DefaultDeserializationConfiguration
+08:33:12.626 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [Definition: io.micronaut.serde.config.DefaultDeserializationConfiguration] for type: deserializationConfiguration 
+08:33:12.627 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.serde.config.DefaultDeserializationConfiguration@59429fac] from definition [Definition: io.micronaut.serde.config.DefaultDeserializationConfiguration] with qualifier [null]
+08:33:12.627 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: Serializer
+08:33:12.631 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.ZonedDateTimeSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.631 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.InetAddressSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.632 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.YearSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.632 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.OffsetDateTimeSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.632 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.ObjectArraySerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.632 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.LocalTimeSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.632 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.HealthStatusSerde null Definition: io.micronaut.serde.support.serdes.HealthStatusSerde
+08:33:12.632 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serializers.ObjectSerializer null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.632 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.LocalDateTimeSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.633 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   interface io.micronaut.serde.Serde @Any Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.633 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.LocalDateSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.633 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.InstantSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.633 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: Deserializer
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.ZonedDateTimeSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.InetAddressSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.YearSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.OffsetDateTimeSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.ObjectArraySerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.LocalTimeSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.HealthStatusSerde null Definition: io.micronaut.serde.support.serdes.HealthStatusSerde
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.LocalDateTimeSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   interface io.micronaut.serde.Serde @Any Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.deserializers.ObjectDeserializer null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.LocalDateSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.634 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.support.serdes.InstantSerde null Definition: io.micronaut.serde.support.LegacyBeansFactory
+08:33:12.644 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: SerdeDeserializationPreInstantiateCallback
+08:33:12.644 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- No bean candidates found for type: SerdeDeserializationPreInstantiateCallback
+08:33:12.645 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.serde.support.DefaultSerdeRegistry@62e7dffa] from definition [Definition: io.micronaut.serde.support.DefaultSerdeRegistry] with qualifier [null]
+08:33:12.645 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: SerdeJacksonConfiguration jacksonConfiguration
+08:33:12.651 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.serde.jackson.SerdeJacksonConfiguration null Definition: io.micronaut.serde.jackson.SerdeJacksonConfiguration
+08:33:12.652 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [Definition: io.micronaut.serde.jackson.SerdeJacksonConfiguration] for type: jacksonConfiguration 
+08:33:12.652 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.serde.jackson.SerdeJacksonConfiguration@546621c4] from definition [Definition: io.micronaut.serde.jackson.SerdeJacksonConfiguration] with qualifier [null]
+08:33:12.666 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.serde.jackson.JacksonJsonMapper@67e28be3] from definition [Definition: io.micronaut.serde.jackson.JacksonJsonMapper] with qualifier [null]
+08:33:12.795 [Test worker] DEBUG io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment -- Processing property source: test resources
+08:33:12.801 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: DefaultEnvironment
+08:33:12.801 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- No bean candidates found for type: DefaultEnvironment
+08:33:12.801 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Starting BeanContext
+08:33:12.803 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.sqs will not be loaded due to failing conditions:
+08:33:12.803 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.sqs.SqsClient] is not present
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.cloudwatchlogs will not be loaded due to failing conditions:
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.cloudwatchlogs.CloudWatchLogsClient] is not present
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.secretsmanager will not be loaded due to failing conditions:
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.secretsmanager.SecretsManagerClient] is not present
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.security.x509 will not be loaded due to failing conditions:
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Required property [micronaut.security.x509.enabled] with value [true] not present
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.ssm will not be loaded due to failing conditions:
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.ssm.SsmClient] is not present
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.client.urlConnection will not be loaded due to failing conditions:
+08:33:12.804 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.http.urlconnection.UrlConnectionHttpClient] is not present
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.gatewaymanagement will not be loaded due to failing conditions:
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.apigatewaymanagementapi.ApiGatewayManagementApiClient] is not present
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.ses will not be loaded due to failing conditions:
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.ses.SesClient] is not present
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.s3 will not be loaded due to failing conditions:
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.s3.S3Client] is not present
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.servicediscovery will not be loaded due to failing conditions:
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.servicediscovery.ServiceDiscoveryClient] is not present
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Configuration: io.micronaut.aws.sdk.v2.service.sns will not be loaded due to failing conditions:
+08:33:12.805 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [software.amazon.awssdk.services.sns.SnsClient] is not present
+08:33:12.806 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: HttpClientRegistry
+08:33:12.806 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.http.client.netty.DefaultNettyHttpClientRegistry null Definition: io.micronaut.http.client.netty.DefaultNettyHttpClientRegistry
+08:33:12.810 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanCreatedEventListener
+08:33:12.810 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Bean [Definition: io.micronaut.web.router.version.VersionAwareRouterListener] will not be loaded due to failing conditions:
+08:33:12.810 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Required property [micronaut.router.versioning.enabled] with value [true] not present
+08:33:12.810 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.context.propagation.instrument.execution.ExecutorServiceInstrumenter null Definition: io.micronaut.context.propagation.instrument.execution.ExecutorServiceInstrumenter
+08:33:12.811 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanInitializedEventListener
+08:33:12.811 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- No bean candidates found for type: BeanInitializedEventListener
+08:33:12.811 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Resolving beans for type: io.micronaut.core.convert.TypeConverter
+08:33:12.811 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: TypeConverter
+08:33:12.812 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.security.config.InterceptUrlMapConverter null Definition: io.micronaut.security.config.InterceptUrlMapConverter
+08:33:12.812 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.security.config.InterceptUrlMapConverter@22367b8] from definition [Definition: io.micronaut.security.config.InterceptUrlMapConverter] with qualifier [null]
+08:33:12.812 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found a registration BeanRegistration: io.micronaut.security.config.InterceptUrlMapConverter@22367b8 for candidate: Definition: io.micronaut.security.config.InterceptUrlMapConverter with qualifier: null
+08:33:12.813 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Resolving beans for type: io.micronaut.core.convert.TypeConverterRegistrar
+08:33:12.813 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: TypeConverterRegistrar
+08:33:12.813 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Bean [io.micronaut.reactor.convert.$ReactorToRxJava2ConverterRegistrar$Definition] will not be loaded due to failing conditions:
+08:33:12.813 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [io.reactivex.Maybe] is not present
+08:33:12.813 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Bean [io.micronaut.reactor.convert.$ReactorToRxJava3ConverterRegistrar$Definition] will not be loaded due to failing conditions:
+08:33:12.813 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [io.reactivex.rxjava3.core.Maybe] is not present
+08:33:12.813 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Bean [Definition: io.micronaut.http.netty.channel.converters.KQueueChannelOptionFactory] will not be loaded due to failing conditions:
+08:33:12.814 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [io.netty.channel.kqueue.KQueue] is not present
+08:33:12.814 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.http.server.netty.converters.NettyConverters null Definition: io.micronaut.http.server.netty.converters.NettyConverters
+08:33:12.814 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.kotlin.converters.FlowReactorConverterRegistrar null Definition: io.micronaut.kotlin.converters.FlowReactorConverterRegistrar
+08:33:12.814 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.kotlin.converters.FlowPublisherConverterRegistrar null Definition: io.micronaut.kotlin.converters.FlowPublisherConverterRegistrar
+08:33:12.814 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.json.convert.JsonConverterRegistrar null Definition: io.micronaut.json.convert.JsonConverterRegistrar
+08:33:12.814 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.buffer.netty.NettyByteBufferFactory null Definition: io.micronaut.buffer.netty.NettyByteBufferFactory
+08:33:12.814 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.jackson.databind.convert.JacksonConverterRegistrar null Definition: io.micronaut.jackson.databind.convert.JacksonConverterRegistrar
+08:33:12.814 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.http.converters.HttpConverterRegistrar null Definition: io.micronaut.http.converters.HttpConverterRegistrar
+08:33:12.814 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Attempting to dynamically load class io.micronaut.context.annotation.Prototype
+08:33:12.814 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Successfully loaded class io.micronaut.context.annotation.Prototype
+08:33:12.815 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanProvider decoderRegistryProvider
+08:33:12.815 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   interface io.micronaut.context.BeanProvider null io.micronaut.inject.provider.BeanProviderDefinition@7503ccef
+08:33:12.815 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] for type: decoderRegistryProvider 
+08:33:12.816 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.inject.provider.BeanProviderDefinition$1@1023150a] from definition [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] with qualifier [null]
+08:33:12.816 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanProvider channelOptionFactory
+08:33:12.816 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   interface io.micronaut.context.BeanProvider null io.micronaut.inject.provider.BeanProviderDefinition@7503ccef
+08:33:12.816 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] for type: channelOptionFactory 
+08:33:12.816 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.inject.provider.BeanProviderDefinition$1@ab20d7c] from definition [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] with qualifier [null]
+08:33:12.816 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.http.server.netty.converters.NettyConverters@474fae39] from definition [Definition: io.micronaut.http.server.netty.converters.NettyConverters] with qualifier [null]
+08:33:12.816 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found a registration BeanRegistration: io.micronaut.http.server.netty.converters.NettyConverters@474fae39 for candidate: Definition: io.micronaut.http.server.netty.converters.NettyConverters with qualifier: null
+08:33:12.816 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Attempting to dynamically load class io.micronaut.context.annotation.Prototype
+08:33:12.816 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Successfully loaded class io.micronaut.context.annotation.Prototype
+08:33:12.816 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.kotlin.converters.FlowReactorConverterRegistrar@1b7cae6f] from definition [Definition: io.micronaut.kotlin.converters.FlowReactorConverterRegistrar] with qualifier [null]
+08:33:12.816 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found a registration BeanRegistration: io.micronaut.kotlin.converters.FlowReactorConverterRegistrar@1b7cae6f for candidate: Definition: io.micronaut.kotlin.converters.FlowReactorConverterRegistrar with qualifier: null
+08:33:12.816 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Attempting to dynamically load class io.micronaut.context.annotation.Prototype
+08:33:12.817 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Successfully loaded class io.micronaut.context.annotation.Prototype
+08:33:12.817 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.kotlin.converters.FlowPublisherConverterRegistrar@d5ce97f] from definition [Definition: io.micronaut.kotlin.converters.FlowPublisherConverterRegistrar] with qualifier [null]
+08:33:12.817 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found a registration BeanRegistration: io.micronaut.kotlin.converters.FlowPublisherConverterRegistrar@d5ce97f for candidate: Definition: io.micronaut.kotlin.converters.FlowPublisherConverterRegistrar with qualifier: null
+08:33:12.817 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Attempting to dynamically load class io.micronaut.context.annotation.Prototype
+08:33:12.817 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Successfully loaded class io.micronaut.context.annotation.Prototype
+08:33:12.817 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanProvider objectCodec
+08:33:12.817 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   interface io.micronaut.context.BeanProvider null io.micronaut.inject.provider.BeanProviderDefinition@7503ccef
+08:33:12.817 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] for type: objectCodec 
+08:33:12.818 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.inject.provider.BeanProviderDefinition$1@e3994ef] from definition [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] with qualifier [null]
+08:33:12.818 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanProvider beanPropertyBinder
+08:33:12.818 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   interface io.micronaut.context.BeanProvider null io.micronaut.inject.provider.BeanProviderDefinition@7503ccef
+08:33:12.818 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] for type: beanPropertyBinder 
+08:33:12.818 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.inject.provider.BeanProviderDefinition$1@2f04105] from definition [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] with qualifier [null]
+08:33:12.818 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.json.convert.JsonConverterRegistrar@309028af] from definition [Definition: io.micronaut.json.convert.JsonConverterRegistrar] with qualifier [null]
+08:33:12.818 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found a registration BeanRegistration: io.micronaut.json.convert.JsonConverterRegistrar@309028af for candidate: Definition: io.micronaut.json.convert.JsonConverterRegistrar with qualifier: null
+08:33:12.819 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.buffer.netty.NettyByteBufferFactory@51351f28] from definition [Definition: io.micronaut.buffer.netty.NettyByteBufferFactory] with qualifier [null]
+08:33:12.819 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found a registration BeanRegistration: io.micronaut.buffer.netty.NettyByteBufferFactory@51351f28 for candidate: Definition: io.micronaut.buffer.netty.NettyByteBufferFactory with qualifier: null
+08:33:12.819 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Attempting to dynamically load class io.micronaut.context.annotation.Prototype
+08:33:12.819 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Successfully loaded class io.micronaut.context.annotation.Prototype
+08:33:12.820 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanProvider objectMapper
+08:33:12.820 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   interface io.micronaut.context.BeanProvider null io.micronaut.inject.provider.BeanProviderDefinition@7503ccef
+08:33:12.820 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] for type: objectMapper 
+08:33:12.820 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.inject.provider.BeanProviderDefinition$1@604b1e1d] from definition [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] with qualifier [null]
+08:33:12.821 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.jackson.databind.convert.JacksonConverterRegistrar@62566842] from definition [Definition: io.micronaut.jackson.databind.convert.JacksonConverterRegistrar] with qualifier [null]
+08:33:12.821 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found a registration BeanRegistration: io.micronaut.jackson.databind.convert.JacksonConverterRegistrar@62566842 for candidate: Definition: io.micronaut.jackson.databind.convert.JacksonConverterRegistrar with qualifier: null
+08:33:12.821 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Attempting to dynamically load class io.micronaut.context.annotation.Prototype
+08:33:12.821 [Test worker] DEBUG io.micronaut.core.reflect.ClassUtils -- Successfully loaded class io.micronaut.context.annotation.Prototype
+08:33:12.821 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: BeanProvider resourceResolver
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   interface io.micronaut.context.BeanProvider null io.micronaut.inject.provider.BeanProviderDefinition@7503ccef
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] for type: resourceResolver 
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.inject.provider.BeanProviderDefinition$1@37191ef0] from definition [io.micronaut.inject.provider.BeanProviderDefinition@7503ccef] with qualifier [null]
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.http.converters.HttpConverterRegistrar@f1a45f8] from definition [Definition: io.micronaut.http.converters.HttpConverterRegistrar] with qualifier [null]
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found a registration BeanRegistration: io.micronaut.http.converters.HttpConverterRegistrar@f1a45f8 for candidate: Definition: io.micronaut.http.converters.HttpConverterRegistrar with qualifier: null
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found 7 bean registrations for type [typeConverterRegistrar]
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   Definition: io.micronaut.http.server.netty.converters.NettyConverters null
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   Definition: io.micronaut.kotlin.converters.FlowReactorConverterRegistrar null
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   Definition: io.micronaut.kotlin.converters.FlowPublisherConverterRegistrar null
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   Definition: io.micronaut.json.convert.JsonConverterRegistrar null
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   Definition: io.micronaut.buffer.netty.NettyByteBufferFactory null
+08:33:12.822 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   Definition: io.micronaut.jackson.databind.convert.JacksonConverterRegistrar null
+08:33:12.823 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   Definition: io.micronaut.http.converters.HttpConverterRegistrar null
+08:33:12.830 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Bean [io.micronaut.reactor.instrument.$ReactorAutomaticContextPropagation$Definition] will not be loaded due to failing conditions:
+08:33:12.830 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [io.micrometer.context.ContextRegistry] is not present
+08:33:12.830 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: LoggingSystem
+08:33:12.830 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Bean [Definition: io.micronaut.logging.impl.Log4jLoggingSystem] will not be loaded due to failing conditions:
+08:33:12.831 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Class [org.apache.logging.log4j.core.config.Configurator] is not present
+08:33:12.831 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.logging.impl.LogbackLoggingSystem null Definition: io.micronaut.logging.impl.LogbackLoggingSystem
+08:33:12.831 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: Environment
+08:33:12.831 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.context.env.DefaultEnvironment @Primary io.micronaut.context.DefaultRuntimeBeanDefinition@38018b62
+08:33:12.831 [Test worker] DEBUG io.micronaut.context.condition.Condition -- Bean [Definition: io.micronaut.buffer.netty.DefaultByteBufAllocatorConfiguration] will not be loaded due to failing conditions:
+08:33:12.831 [Test worker] DEBUG io.micronaut.context.condition.Condition -- * Required property [netty.default.allocator] with value [null] not present
+08:33:12.831 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: ReactorConfiguration configuration
+08:33:12.832 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.reactor.config.ReactorConfiguration null Definition: io.micronaut.reactor.config.ReactorConfiguration
+08:33:12.833 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [Definition: io.micronaut.reactor.config.ReactorConfiguration] for type: configuration 
+08:33:12.833 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [ReactorConfiguration[enableAutomaticContextPropagation=null, enableScheduleHookContextPropagation=null]] from definition [Definition: io.micronaut.reactor.config.ReactorConfiguration] with qualifier [null]
+08:33:12.841 [Test worker] DEBUG reactor.util.Loggers -- Using Slf4j logging framework
+08:33:12.841 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.reactor.instrument.ReactorInstrumentation@134c370e] from definition [Definition: io.micronaut.reactor.instrument.ReactorInstrumentation] with qualifier [null]
+08:33:12.842 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: Environment environment
+08:33:12.842 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.context.env.DefaultEnvironment @Primary io.micronaut.context.DefaultRuntimeBeanDefinition@38018b62
+08:33:12.842 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found concrete candidate [io.micronaut.context.DefaultRuntimeBeanDefinition@38018b62] for type: environment 
+08:33:12.843 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.context.DefaultApplicationContext$RuntimeConfiguredEnvironment@324dcd31] from definition [io.micronaut.context.DefaultRuntimeBeanDefinition@38018b62] with qualifier [@Primary]
+08:33:12.843 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Resolving beans for type: io.micronaut.logging.LoggingSystem
+08:33:12.843 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Finding candidate beans for type: LoggingSystem E
+08:33:12.843 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext --   class io.micronaut.logging.impl.LogbackLoggingSystem null Definition: io.micronaut.logging.impl.LogbackLoggingSystem
+08:33:12.843 [Test worker] DEBUG io.micronaut.context.lifecycle -- Created bean [io.micronaut.logging.impl.LogbackLoggingSystem@7c84195] from definition [Definition: io.micronaut.logging.impl.LogbackLoggingSystem] with qualifier [null]
+08:33:12.843 [Test worker] DEBUG io.micronaut.context.DefaultBeanContext -- Found a registration BeanRegistration: io.micronaut.logging.impl.LogbackLoggingSystem@7c84195 for candidate: Definition: io.micronaut.logging.impl.LogbackLoggingSystem with qualifier: null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

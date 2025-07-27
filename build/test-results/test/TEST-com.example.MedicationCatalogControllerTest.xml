@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.MedicationCatalogControllerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-07-27T15:33:12" hostname="SCOTTs-MacBook-Pro.local" time="0.001">
+  <properties/>
+  <testcase name="initializationError" classname="com.example.MedicationCatalogControllerTest" time="0.001">
+    <failure message="io.micronaut.context.exceptions.BeanInstantiationException: Bean definition [io.micronaut.logging.PropertiesLoggingLevelsConfigurer] could not be loaded: Error instantiating bean of type  [io.micronaut.logging.PropertiesLoggingLevelsConfigurer]&#10;&#10;Message: Resource logback.xml not found&#10;Path Taken: new PropertiesLoggingLevelsConfigurer(Environment environment,List loggingSystems)" type="io.micronaut.context.exceptions.BeanInstantiationException">io.micronaut.context.exceptions.BeanInstantiationException: Bean definition [io.micronaut.logging.PropertiesLoggingLevelsConfigurer] could not be loaded: Error instantiating bean of type  [io.micronaut.logging.PropertiesLoggingLevelsConfigurer]
+
+Message: Resource logback.xml not found
+Path Taken: new PropertiesLoggingLevelsConfigurer(Environment environment,List loggingSystems)
+	at app//io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1982)
+	at app//io.micronaut.context.DefaultApplicationContext.initializeContext(DefaultApplicationContext.java:294)
+	at app//io.micronaut.context.DefaultBeanContext.readAllBeanDefinitionClasses(DefaultBeanContext.java:3348)
+	at app//io.micronaut.context.DefaultBeanContext.finalizeConfiguration(DefaultBeanContext.java:3692)
+	at app//io.micronaut.context.DefaultBeanContext.start(DefaultBeanContext.java:342)
+	at app//io.micronaut.context.DefaultApplicationContext.start(DefaultApplicationContext.java:202)
+	at app//io.micronaut.test.extensions.AbstractMicronautExtension.startApplicationContext(AbstractMicronautExtension.java:502)
+	at app//io.micronaut.test.extensions.AbstractMicronautExtension.beforeClass(AbstractMicronautExtension.java:341)
+	at app//io.micronaut.test.extensions.junit5.MicronautJunit5Extension.beforeAll(MicronautJunit5Extension.java:84)
+	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: io.micronaut.context.exceptions.BeanInstantiationException: Error instantiating bean of type  [io.micronaut.logging.PropertiesLoggingLevelsConfigurer]
+
+Message: Resource logback.xml not found
+Path Taken: new PropertiesLoggingLevelsConfigurer(Environment environment,List loggingSystems)
+	at app//io.micronaut.context.DefaultBeanContext.resolveByBeanFactory(DefaultBeanContext.java:2326)
+	at app//io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:2281)
+	at app//io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:2293)
+	at app//io.micronaut.context.DefaultBeanContext.createRegistration(DefaultBeanContext.java:3095)
+	at app//io.micronaut.context.SingletonScope.getOrCreate(SingletonScope.java:80)
+	at app//io.micronaut.context.DefaultBeanContext.findOrCreateSingletonBeanRegistration(DefaultBeanContext.java:2997)
+	at app//io.micronaut.context.DefaultBeanContext.initializeEagerBean(DefaultBeanContext.java:2678)
+	at app//io.micronaut.context.DefaultBeanContext.initializeContext(DefaultBeanContext.java:1976)
+	... 9 more
+Caused by: io.micronaut.logging.LoggingSystemException: Resource logback.xml not found
+	at app//io.micronaut.logging.impl.LogbackUtils.configure(LogbackUtils.java:109)
+	at app//io.micronaut.logging.impl.LogbackUtils.configure(LogbackUtils.java:56)
+	at app//io.micronaut.logging.impl.LogbackLoggingSystem.refresh(LogbackLoggingSystem.java:71)
+	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at app//io.micronaut.logging.PropertiesLoggingLevelsConfigurer.initLogging(PropertiesLoggingLevelsConfigurer.java:85)
+	at app//io.micronaut.logging.PropertiesLoggingLevelsConfigurer.&lt;init&gt;(PropertiesLoggingLevelsConfigurer.java:69)
+	at app//io.micronaut.logging.$PropertiesLoggingLevelsConfigurer$Definition.instantiate(Unknown Source)
+	at app//io.micronaut.context.DefaultBeanContext.resolveByBeanFactory(DefaultBeanContext.java:2311)
+	... 16 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

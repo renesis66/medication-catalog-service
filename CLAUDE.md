@@ -118,7 +118,31 @@ The domain layer enforces these key business rules:
 - **Integration Tests**: Full HTTP testing with `@MicronautTest`
 - **Controller Tests**: Real HTTP client testing against endpoints
 - **Domain Tests**: Business rule validation in domain layer
+- **Test Environment Isolation**: Uses in-memory repository implementation
 - Use `MedicationCatalogApiControllerTest` as template for new endpoint tests
+
+#### Test Configuration (✅ WORKING)
+- All tests pass successfully (100% success rate)
+- In-memory repository replaces DynamoDB during tests
+- No external dependencies required for testing
+- Proper logging configuration prevents test noise
+
+#### Test Environment Setup
+```kotlin
+// Production beans excluded from test environment
+@Requires(notEnv = ["test"])
+class DynamoDbConfig { /* ... */ }
+
+@Requires(notEnv = ["test"]) 
+class RepositoryConfig { /* ... */ }
+
+@Requires(notEnv = ["test"])
+class MedicationCatalogRepositoryImpl { /* ... */ }
+
+// Test-only implementation
+@Requires(env = ["test"])
+class InMemoryMedicationCatalogRepository { /* ... */ }
+```
 
 ### Common Development Patterns
 
@@ -139,3 +163,53 @@ The domain layer enforces these key business rules:
 2. Add repository method with proper DynamoDB query
 3. Create application service method
 4. Expose via controller if needed
+
+## Project Status & Recent Changes
+
+### ✅ Current Status (Latest Session Completed)
+- **Build Status**: ✅ All builds successful
+- **Test Status**: ✅ 100% test success rate (1/1 tests passing)
+- **Repository**: ✅ Committed and pushed to GitHub
+- **Dependencies**: ✅ All runtime dependencies resolved
+
+### Recent Fixes Applied
+1. **Test Configuration Issues Resolved**:
+   - Fixed repository bean injection conflicts
+   - Added proper environment-based bean selection with `@Requires` annotations
+   - Created `InMemoryMedicationCatalogRepository` for test isolation
+   - Added comprehensive logging configuration (`logback.xml`, `logback-test.xml`)
+
+2. **Infrastructure Improvements**:
+   - Added comprehensive `.gitignore` for Micronaut Kotlin projects
+   - Properly excluded build artifacts from version control
+   - Organized test resources and configuration files
+
+3. **Dependency Resolution**:
+   - Added missing `snakeyaml` dependency for YAML configuration support
+   - Added `kotlinx-coroutines-core` for suspend function support
+   - Included proper test dependencies (JUnit 5, Logback)
+
+### Known Working Commands (Verified)
+```bash
+./gradlew test              # ✅ All tests pass
+./gradlew build             # ✅ Build succeeds
+./gradlew run               # ✅ Application starts (requires DynamoDB local)
+git status                  # ✅ Clean working directory
+```
+
+### Key Lessons Learned
+1. **Always use environment-specific beans** instead of `@Replaces` for test isolation
+2. **Include YAML parser dependency** (`snakeyaml`) when using application.yml
+3. **Separate test logging configuration** to reduce noise during test execution
+4. **Exclude production infrastructure** from test environment with `@Requires(notEnv = ["test"])`
+
+### Next Development Areas
+- Add more comprehensive API tests for edge cases
+- Implement additional medication categories and business rules
+- Add validation for medication interactions
+- Consider adding caching layer for frequently accessed medications
+
+### Git Repository
+- **URL**: https://github.com/renesis66/medication-catalog-service
+- **Branch**: main (up to date)
+- **Last Commit**: Test configuration fixes and gitignore addition

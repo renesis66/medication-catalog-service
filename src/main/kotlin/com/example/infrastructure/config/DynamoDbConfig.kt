@@ -2,6 +2,7 @@ package com.example.infrastructure.config
 
 import io.micronaut.context.annotation.Bean
 import io.micronaut.context.annotation.Factory
+import io.micronaut.context.annotation.Requires
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient
 import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient
@@ -9,6 +10,7 @@ import jakarta.inject.Singleton
 import java.net.URI
 
 @Factory
+@Requires(notEnv = ["test"])
 class DynamoDbConfig {
     
     @Bean

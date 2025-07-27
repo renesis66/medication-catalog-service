@@ -1,0 +1,22 @@
+micronaut:
+  application:
+    name: medication-catalog-service-test
+  server:
+    port: -1  # Random port for tests
+  test-resources:
+    enabled: false  # Disable test resources to avoid Docker dependency
+  security:
+    enabled: false  # Disable security for tests
+
+# Use in-memory repository for tests (no DynamoDB)
+test:
+  database:
+    type: in-memory
+
+logger:
+  levels:
+    com.example: DEBUG
+    org.testcontainers: WARN
+    software.amazon.awssdk: WARN
+    io.micronaut.testresources: WARN
+    root: WARN

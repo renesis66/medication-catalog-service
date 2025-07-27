@@ -4,12 +4,14 @@ import com.example.domain.model.*
 import com.example.domain.model.valueobjects.MedicationName
 import com.example.domain.model.valueobjects.DosageUnit
 import com.example.domain.repository.MedicationCatalogRepository
+import io.micronaut.context.annotation.Requires
 import io.micronaut.context.event.ApplicationEventListener
 import io.micronaut.context.event.StartupEvent
 import jakarta.inject.Singleton
 import kotlinx.coroutines.runBlocking
 
 @Singleton
+@Requires(notEnv = ["test"])
 class MedicationDataInitializer(
     private val medicationCatalogRepository: MedicationCatalogRepository
 ) : ApplicationEventListener<StartupEvent> {

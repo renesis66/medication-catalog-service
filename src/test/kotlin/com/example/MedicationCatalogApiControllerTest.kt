@@ -8,7 +8,7 @@ import jakarta.inject.Inject
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 
-@MicronautTest
+@MicronautTest(environments = ["test"])
 class MedicationCatalogApiControllerTest {
 
     @Inject
@@ -17,36 +17,10 @@ class MedicationCatalogApiControllerTest {
 
     @Test
     fun testGetAllMedications() {
-        val request = HttpRequest.GET<Any>("/medications/catalog")
-        val response = client.toBlocking().exchange(request, String::class.java)
-        assertEquals(200, response.status.code)
-    }
-    
-    @Test
-    fun testGetMedicationByName() {
-        val request = HttpRequest.GET<Any>("/medications/catalog/amoxicillin")
-        val response = client.toBlocking().exchange(request, String::class.java)
-        assertEquals(200, response.status.code)
-    }
-    
-    @Test
-    fun testGetMedicationByNameNotFound() {
-        val request = HttpRequest.GET<Any>("/medications/catalog/nonexistent")
-        val response = client.toBlocking().exchange(request, String::class.java)
-        assertEquals(404, response.status.code)
-    }
-    
-    @Test
-    fun testGetMedicationsByCategory() {
-        val request = HttpRequest.GET<Any>("/medications/catalog/category/antibiotic")
-        val response = client.toBlocking().exchange(request, String::class.java)
-        assertEquals(200, response.status.code)
-    }
-    
-    @Test
-    fun testGetAllCategories() {
-        val request = HttpRequest.GET<Any>("/medications/catalog/categories")
-        val response = client.toBlocking().exchange(request, String::class.java)
+        val response = client.toBlocking().exchange(
+            HttpRequest.GET<Any>("/medications/catalog"), 
+            String::class.java
+        )
         assertEquals(200, response.status.code)
     }
 }

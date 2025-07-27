@@ -36,7 +36,11 @@ dependencies {
     testImplementation("io.micronaut:micronaut-http-client")
     testImplementation("io.micronaut.test:micronaut-test-junit5")
     testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testImplementation("org.junit.jupiter:junit-jupiter-params")
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    testRuntimeOnly("ch.qos.logback:logback-classic")
 }
 
 application {
@@ -63,9 +67,12 @@ tasks {
 graalvmNative.toolchainDetection.set(false)
 micronaut {
     runtime("netty")
-    testRuntime("spock2")
+    testRuntime("junit5")
     processing {
         incremental(true)
         annotations("com.example.*")
+    }
+    testResources {
+        enabled = false
     }
 }

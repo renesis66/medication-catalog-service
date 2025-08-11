@@ -8,7 +8,7 @@ plugins {
 }
 
 version = "0.1"
-group = "com.example"
+group = "com.healthcare.medication.catalog"
 
 val kotlinVersion = project.properties.get("kotlinVersion")
 repositories {
@@ -44,7 +44,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("com.example.ApplicationKt")
+    mainClass.set("com.healthcare.medication.catalog.ApplicationKt")
 }
 
 java {
@@ -70,7 +70,7 @@ micronaut {
     testRuntime("junit5")
     processing {
         incremental(true)
-        annotations("com.example.*")
+        annotations("com.healthcare.medication.catalog.*")
     }
     testResources {
         enabled = false

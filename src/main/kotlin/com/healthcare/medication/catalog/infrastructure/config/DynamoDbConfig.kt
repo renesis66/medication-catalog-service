@@ -15,6 +15,7 @@ class DynamoDbConfig {
     
     @Bean
     @Singleton
+    @MedicationCatalogDynamoDb
     fun dynamoDbClient(): DynamoDbClient {
         return DynamoDbClient.builder()
             .region(Region.US_EAST_1)
@@ -24,7 +25,8 @@ class DynamoDbConfig {
     
     @Bean
     @Singleton
-    fun dynamoDbEnhancedClient(dynamoDbClient: DynamoDbClient): DynamoDbEnhancedClient {
+    @MedicationCatalogDynamoDb
+    fun dynamoDbEnhancedClient(@MedicationCatalogDynamoDb dynamoDbClient: DynamoDbClient): DynamoDbEnhancedClient {
         return DynamoDbEnhancedClient.builder()
             .dynamoDbClient(dynamoDbClient)
             .build()

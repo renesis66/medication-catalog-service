@@ -189,11 +189,94 @@ class InMemoryMedicationCatalogRepository { /* ... */ }
    - Added `kotlinx-coroutines-core` for suspend function support
    - Included proper test dependencies (JUnit 5, Logback)
 
+## Service Startup Commands
+
+### Prerequisites
+- Java 17+
+- Docker or Rancher Desktop (for DynamoDB Local)
+
+### Quick Start (Known Issues)
+
+**⚠️ CURRENT STATUS: Service has DynamoDB bean injection conflicts**
+
+#### Step 1: Test Service (Works)
+```bash
+# Run tests to verify service works
+./gradlew test
+```
+
+#### Step 2: Start Docker/Rancher Desktop
+```bash
+open -a "Rancher Desktop"
+# Wait for Rancher Desktop to fully start (may take 30-60 seconds)
+```
+
+#### Step 3: Start DynamoDB Local and Create Table
+```bash
+# Start DynamoDB Local (if not already running from other services)
+docker-compose up -d dynamodb-local
+
+# Create medication-catalog table
+aws dynamodb create-table \
+    --table-name medication-catalog \
+    --attribute-definitions \
+        AttributeName=PK,AttributeType=S \
+        AttributeName=SK,AttributeType=S \
+        AttributeName=GSI1PK,AttributeType=S \
+        AttributeName=GSI1SK,AttributeType=S \
+    --key-schema \
+        AttributeName=PK,KeyType=HASH \
+        AttributeName=SK,KeyType=RANGE \
+    --global-secondary-indexes \
+        "IndexName=GSI1,KeySchema=[{AttributeName=GSI1PK,KeyType=HASH},{AttributeName=GSI1SK,KeyType=RANGE}],Projection={ProjectionType=ALL},ProvisionedThroughput={ReadCapacityUnits=5,WriteCapacityUnits=5}" \
+    --provisioned-throughput \
+        ReadCapacityUnits=5,WriteCapacityUnits=5 \
+    --endpoint-url http://localhost:8000 \
+    --region us-east-1
+```
+
+#### Step 4: Attempt to Start Service (Currently Fails)
+```bash
+# Check if port 8080 is in use
+lsof -i :8080
+
+# Start on custom port to avoid conflicts
+MICRONAUT_SERVER_PORT=8081 ./gradlew run
+```
+
+### Known Issues
+
+#### DynamoDB Bean Conflict Error:
+```
+Multiple possible bean candidates found: [DynamoDbClient, DynamoDbClient]
+```
+
+**Root Cause**: When multiple Micronaut services with DynamoDB configuration are running in the same environment, there are bean injection conflicts.
+
+**Potential Solutions** (not yet implemented):
+1. Use service-specific qualifiers for DynamoDB beans
+2. Run services in isolated environments
+3. Use different DynamoDB client configurations per service
+4. Implement proper bean scoping
+
+### Troubleshooting
+
+1. **Service won't start due to bean conflicts:**
+   - Ensure no other services with DynamoDB are running
+   - Consider using different environments or profiles
+
+2. **Port conflicts:**
+   ```bash
+   lsof -i :8080
+   kill <PID>
+   # Or use: MICRONAUT_SERVER_PORT=8081 ./gradlew run
+   ```
+
 ### Known Working Commands (Verified)
 ```bash
 ./gradlew test              # ✅ All tests pass
 ./gradlew build             # ✅ Build succeeds
-./gradlew run               # ✅ Application starts (requires DynamoDB local)
+./gradlew run               # ❌ Fails with DynamoDB bean conflicts
 git status                  # ✅ Clean working directory
 ```
 
